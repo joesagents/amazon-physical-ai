@@ -1,0 +1,13 @@
+{
+  "audience": "MBA",
+  "course": "ops",
+  "assumed_prereqs": [
+    "Familiarity with core frameworks in the course domain"
+  ],
+  "engagement_risks": [
+    "Overly long narrative without exhibits",
+    "Questions that reward recall instead of analysis/synthesis",
+    "Math load not matched to audience level"
+  ],
+  "date": "2025-10-28 19:58:08"
+}

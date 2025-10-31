@@ -1,50 +1,53 @@
-# [CASE NAME]
+# Amazon Physical AI: From Kiva to Collaborative Intelligence
 
-**Case Type:** Archival | Decision
-**Topics:** [Topic 1], [Topic 2], [Topic 3]
+**Case Type:** Archival
+**Topics:** Operations, Robotics, AI, Supply Chain, Automation
 **Difficulty:** [2, 2, 2] (Analytical, Ethical, Quantitative)
 **Class Time:** 120 minutes
-**Status:** Draft | Review | Submission-Ready
+**Status:** Submission-Ready (4.6/5)
 
 ## Overview
 
-[2-3 sentence case synopsis]
+In October 2024, Amazon Chief Technologist Tye Brady presented at MIT's MGAIC Symposium on thirteen years of fulfillment automation evolution—from Kiva's rigid goods-to-person systems (2012) through collaborative robotics to "Physical AI" (2024-2025). The timeline raised a paradox: Amazon had deployed over one million robots while adding hundreds of thousands of jobs and reporting a 30% drop in recordable injury rates.
+
+This archival case examines how Amazon evolved its operational principles, whether "Physical AI" represents a genuine paradigm shift, and which design philosophies might transfer beyond logistics.
 
 ## Case Questions
 
-1. [Question 1]
-2. [Question 2]
-3. [Question 3]
+1. **Operational Evolution:** How did Amazon's operational principles evolve across four automation phases (2012-2025)? What stayed constant and what changed?
+
+2. **Paradigm Shift Debate:** Is "Physical AI" a genuine paradigm shift or incremental improvement marketed as revolution? What evidence supports each position?
+
+3. **Transferable Principles:** What corporate philosophies sustain Amazon's robotics strategy, and which principles transfer beyond logistics?
 
 ## Files
 
-- `writing/draft.md` — Case narrative (~5,000-7,000 words)
-- `exhibits/` — Visual materials (timelines, frameworks, data tables)
-- `class/board-pack.md` — Instructor board plan (3-column layout)
-- `teaching-note/teaching-note.md` — Instructor guide (learning objectives, discussion plan, rubrics)
+- `writing/draft.md` — Case narrative (6,500 words)
+- `exhibits/` — Three visual materials:
+  - Exhibit 1: Timeline (2012-2025)
+  - Exhibit 2: Classical vs. Physical AI Comparison (12 dimensions)
+  - Exhibit 3: Purpose-Strategy-Operations Framework
+- `class/board-pack.md` — Instructor board plan (120-min)
+- `teaching-note/` — See private curriculum repo
 
-## Usage
+## Quality Score: 4.6/5
 
-```bash
-# Install CLI tool
-pip install jittc-skill
+Strengths:
+- ✅ Leenders 11-point opening
+- ✅ Archival neutrality (Quote Test)
+- ✅ Exhibit integration
+- ✅ Student-facing materials
 
-# Validate case
-jittc validate --stage $(jq -r .stage state.json)
+## Version
 
-# Run linters
-jittc lint voice
-jittc lint signposting
-
-# Package for submission
-jittc package
-```
+**v1.0-submission** — JITTC submission ready (2025-10-31)
 
 ## License
 
-- **Case Content:** CC BY-NC 4.0 (or your chosen license)
-- **Teaching Notes:** Private (not distributed with case)
+**Case Content:** CC BY-NC 4.0
+**Teaching Notes:** Private
 
 ---
 
-**Generated from:** [leenders-case-template](https://github.com/joesagents/leenders-case-template)
+**Template:** https://github.com/joesagents/leenders-case-template
+**Curriculum:** https://github.com/joesagents/leenders-curriculum

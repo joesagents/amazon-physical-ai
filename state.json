@@ -1,12 +1,14 @@
 {
-  "case_name": "YOUR_CASE_NAME",
-  "stage": 0,
-  "stage_name": "contract",
-  "author": "YOUR_NAME",
+  "case_name": "Amazon Physical AI",
+  "stage": 9,
+  "stage_name": "submission",
+  "author": "Joachim Ehrenthal",
   "case_type": "archival",
   "difficulty": [2, 2, 2],
-  "topics": [],
+  "topics": ["operations", "robotics", "AI", "supply-chain", "automation"],
   "class_time": "120min",
-  "created": "2025-10-31",
-  "last_updated": "2025-10-31"
+  "created": "2025-10-28",
+  "last_updated": "2025-10-31",
+  "status": "submission-ready",
+  "score": "4.6/5"
 }

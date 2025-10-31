@@ -1,0 +1,151 @@
+{
+  "items": [
+    {
+      "lane": "Intro & Objectives",
+      "title": "Warm-up",
+      "content": "5-min warm-up; set norms",
+      "color": "#FFD966",
+      "type": "sticky"
+    },
+    {
+      "lane": "Intro & Objectives",
+      "title": "Case summary",
+      "content": "Physical AI at Amazon: From Kiva to Collaborative Intelligence",
+      "color": "#FFD966",
+      "type": "sticky"
+    },
+    {
+      "lane": "Intro & Objectives",
+      "title": "Learning goals",
+      "content": "[add 2\u20133 goals]",
+      "color": "#FFD966",
+      "type": "sticky"
+    },
+    {
+      "lane": "Evidence",
+      "title": "exhibit1-timeline.md",
+      "content": "Why it matters: ",
+      "color": "#9FC5E8",
+      "type": "sticky"
+    },
+    {
+      "lane": "Evidence",
+      "title": "exhibit2-comparison-classical-vs-physical-ai.md",
+      "content": "Why it matters: ",
+      "color": "#9FC5E8",
+      "type": "sticky"
+    },
+    {
+      "lane": "Evidence",
+      "title": "exhibit3-purpose-strategy-operations-framework.md",
+      "content": "Why it matters: ",
+      "color": "#9FC5E8",
+      "type": "sticky"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 1 \u00d7 ROI",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 1 \u00d7 Risk",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 1 \u00d7 Feasibility",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 2 \u00d7 ROI",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 2 \u00d7 Risk",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 2 \u00d7 Feasibility",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 3 \u00d7 ROI",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 3 \u00d7 Risk",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Alternatives \u00d7 Criteria",
+      "title": "Option 3 \u00d7 Feasibility",
+      "content": "[pros/cons or metric]",
+      "color": "#B6D7A8",
+      "type": "grid_cell"
+    },
+    {
+      "lane": "Synthesis",
+      "title": "Risks",
+      "content": "Top 3 risks",
+      "color": "#C9B2FF",
+      "type": "sticky"
+    },
+    {
+      "lane": "Synthesis",
+      "title": "Insights",
+      "content": "2\u20133 insights from discussion",
+      "color": "#C9B2FF",
+      "type": "sticky"
+    },
+    {
+      "lane": "Synthesis",
+      "title": "Next steps",
+      "content": "Immediate actions / owners",
+      "color": "#C9B2FF",
+      "type": "sticky"
+    },
+    {
+      "lane": "Wrap-Up / Reflection",
+      "title": "Takeaways",
+      "content": "Key takeaways",
+      "color": "#F9CB9C",
+      "type": "sticky"
+    },
+    {
+      "lane": "Wrap-Up / Reflection",
+      "title": "Poll",
+      "content": "QR/link for pulse check",
+      "color": "#F9CB9C",
+      "type": "sticky"
+    },
+    {
+      "lane": "Gen-AI Scaffolding (Optional \u2014 delete if unused)",
+      "title": "Safe prompts",
+      "content": "List 3 clarifying questions that do not reveal outcomes.\nMap each alternative to evidence (cite exhibits) without giving recommendations.\nSurface 2 risks and 2 mitigations for the leading option.",
+      "color": "#E6E6E6",
+      "type": "sticky"
+    }
+  ]
+}

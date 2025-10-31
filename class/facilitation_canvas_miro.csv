@@ -1,0 +1,24 @@
+lane,title,content,color,type
+Intro & Objectives,Warm-up,5-min warm-up; set norms,#FFD966,sticky
+Intro & Objectives,Case summary,Physical AI at Amazon: From Kiva to Collaborative Intelligence,#FFD966,sticky
+Intro & Objectives,Learning goals,[add 2–3 goals],#FFD966,sticky
+Evidence,exhibit1-timeline.md,Why it matters: ,#9FC5E8,sticky
+Evidence,exhibit2-comparison-classical-vs-physical-ai.md,Why it matters: ,#9FC5E8,sticky
+Evidence,exhibit3-purpose-strategy-operations-framework.md,Why it matters: ,#9FC5E8,sticky
+Alternatives × Criteria,Option 1 × ROI,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 1 × Risk,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 1 × Feasibility,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 2 × ROI,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 2 × Risk,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 2 × Feasibility,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 3 × ROI,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 3 × Risk,[pros/cons or metric],#B6D7A8,grid_cell
+Alternatives × Criteria,Option 3 × Feasibility,[pros/cons or metric],#B6D7A8,grid_cell
+Synthesis,Risks,Top 3 risks,#C9B2FF,sticky
+Synthesis,Insights,2–3 insights from discussion,#C9B2FF,sticky
+Synthesis,Next steps,Immediate actions / owners,#C9B2FF,sticky
+Wrap-Up / Reflection,Takeaways,Key takeaways,#F9CB9C,sticky
+Wrap-Up / Reflection,Poll,QR/link for pulse check,#F9CB9C,sticky
+Gen-AI Scaffolding (Optional — delete if unused),Safe prompts,"List 3 clarifying questions that do not reveal outcomes.
+Map each alternative to evidence (cite exhibits) without giving recommendations.
+Surface 2 risks and 2 mitigations for the leading option.",#E6E6E6,sticky
