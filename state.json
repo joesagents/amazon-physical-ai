@@ -1,0 +1,12 @@
+{
+  "case_name": "YOUR_CASE_NAME",
+  "stage": 0,
+  "stage_name": "contract",
+  "author": "YOUR_NAME",
+  "case_type": "archival",
+  "difficulty": [2, 2, 2],
+  "topics": [],
+  "class_time": "120min",
+  "created": "2025-10-31",
+  "last_updated": "2025-10-31"
+}

@@ -1,0 +1,139 @@
+# GitHub Actions Workflow: Validate Case Quality
+#
+# Runs on every pull request that modifies case content.
+# Executes all jittc linters to enforce Leenders + JITTC editorial standards.
+#
+# Place this file in: .github/workflows/validate.yml
+
+name: Validate Case Quality
+
+on:
+  pull_request:
+    paths:
+      - 'writing/**'
+      - 'exhibits/**'
+      - 'class/**'
+      - 'state.json'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install jittc-skill
+        run: |
+          pip install --upgrade pip
+          pip install jittc-skill
+
+      - name: Run voice linter (Quote Test)
+        id: voice
+        continue-on-error: true
+        run: |
+          echo "🔍 Running voice linter (Quote Test)..."
+          jittc lint voice
+
+      - name: Run signposting linter (Exhibit Callouts)
+        id: signposting
+        continue-on-error: true
+        run: |
+          echo "🔍 Running signposting linter..."
+          jittc lint signposting
+
+      - name: Run naming linter (File Conventions)
+        id: naming
+        continue-on-error: true
+        run: |
+          echo "🔍 Running naming linter..."
+          jittc lint naming
+
+      - name: Run difficulty linter (Cube Balance)
+        id: difficulty
+        continue-on-error: true
+        run: |
+          echo "🔍 Running difficulty linter..."
+          jittc lint difficulty
+
+      - name: Run engagement linter (Bloom Taxonomy)
+        id: engagement
+        continue-on-error: true
+        run: |
+          echo "🔍 Running engagement linter..."
+          jittc lint engagement
+
+      - name: Check linter results
+        if: |
+          steps.voice.outcome == 'failure' ||
+          steps.signposting.outcome == 'failure' ||
+          steps.naming.outcome == 'failure' ||
+          steps.difficulty.outcome == 'failure' ||
+          steps.engagement.outcome == 'failure'
+        run: |
+          echo "❌ One or more linters failed."
+          echo "Run 'jittc lint <linter-name>' locally to see detailed violations."
+          exit 1
+
+      - name: Post failure comment
+        if: failure()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const output = `
+            ❌ **Quality gates failed**
+
+            One or more linters detected violations. Run locally to debug:
+
+            \`\`\`bash
+            pip install jittc-skill
+            jittc lint voice        # Quote Test violations
+            jittc lint signposting  # Exhibit callout issues
+            jittc lint naming       # File naming problems
+            jittc lint difficulty   # Difficulty cube imbalance
+            jittc lint engagement   # Bloom taxonomy check
+            \`\`\`
+
+            See [linter docs](https://github.com/joachim-ehrenthal/jittc-skill#linters) for fix guidance.
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
+
+      - name: Post success comment
+        if: success()
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const output = `
+            ✅ **All quality gates passed**
+
+            - Voice (Quote Test): No violations
+            - Signposting: All exhibits properly referenced
+            - Naming: Conventions followed
+            - Difficulty: Balanced
+            - Engagement: Bloom 4-5 targeted
+
+            Ready to merge!
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
+
+      - name: All linters passed
+        if: success()
+        run: echo "✅ All quality gates passed. Case is compliant with Leenders + JITTC standards."

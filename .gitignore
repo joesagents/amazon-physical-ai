@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+~$*
+
+# Submission artifacts (generated)
+submission/*.zip
+
+# Teaching notes (if using git-crypt)
+# teaching-note/*.md filter=git-crypt diff=git-crypt

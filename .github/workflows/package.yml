@@ -1,0 +1,106 @@
+# GitHub Actions Workflow: Package Submission
+#
+# Runs when you push a tag matching submission/revision patterns.
+# Creates a JITTC-ready ZIP package and attaches it to GitHub Release.
+#
+# Usage:
+#   git tag v1.0-submission -m "JITTC submission ready"
+#   git push origin v1.0-submission
+#
+# Place this file in: .github/workflows/package.yml
+
+name: Package Submission
+
+on:
+  push:
+    tags:
+      - 'v*-submission'
+      - 'v*-revision'
+      - 'v*-draft'
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install jittc-skill
+        run: |
+          pip install --upgrade pip
+          pip install jittc-skill
+
+      - name: Extract case name from state.json
+        id: case_info
+        run: |
+          CASE_NAME=$(jq -r .case_name state.json)
+          CASE_STAGE=$(jq -r .stage state.json)
+          echo "case_name=$CASE_NAME" >> $GITHUB_OUTPUT
+          echo "case_stage=$CASE_STAGE" >> $GITHUB_OUTPUT
+          echo "📦 Packaging: $CASE_NAME (Stage $CASE_STAGE)"
+
+      - name: Run validation before packaging
+        run: |
+          echo "🔍 Running final validation..."
+          jittc validate --stage ${{ steps.case_info.outputs.case_stage }}
+
+      - name: Create submission package
+        run: |
+          echo "📦 Creating submission ZIP for ${{ github.ref_name }}..."
+          jittc package --tag ${{ github.ref_name }}
+
+      - name: Verify ZIP created
+        run: |
+          if [ ! -f submission/*.zip ]; then
+            echo "❌ ZIP file not found in submission/"
+            exit 1
+          fi
+          echo "✅ ZIP created: $(ls -lh submission/*.zip)"
+
+      - name: Upload as GitHub Release artifact
+        uses: softprops/action-gh-release@v1
+        with:
+          files: submission/*.zip
+          body: |
+            ## Submission Package: ${{ steps.case_info.outputs.case_name }}
+
+            **Tag:** ${{ github.ref_name }}
+            **Stage:** ${{ steps.case_info.outputs.case_stage }}
+            **Generated:** ${{ github.event.head_commit.timestamp }}
+
+            ### Contents
+
+            - Case narrative (`writing/draft.md`)
+            - Exhibits (`exhibits/`)
+            - Board pack (`class/board-pack.md`)
+            - Teaching note (`teaching-note/teaching-note.md` — if included)
+
+            ### Quality Gates
+
+            All linters passed:
+            - ✅ Voice (Quote Test)
+            - ✅ Signposting (Exhibit Callouts)
+            - ✅ Naming (File Conventions)
+            - ✅ Difficulty (Cube Balance)
+            - ✅ Engagement (Bloom Taxonomy)
+
+            ---
+
+            **Ready for:** JITTC submission, classroom use, instructor sharing
+
+            Download the ZIP above and submit to case journal.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Success notification
+        if: success()
+        run: |
+          echo "✅ Submission package created successfully"
+          echo "📥 Download from: https://github.com/${{ github.repository }}/releases/tag/${{ github.ref_name }}"
